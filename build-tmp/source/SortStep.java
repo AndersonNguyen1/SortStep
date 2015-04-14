@@ -1,4 +1,22 @@
-import java.util.Arrays;
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.Arrays; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class SortStep extends PApplet {
+
+
 private int numInts = 1000;
 private int largestInt = numInts;
 private int [] myArray= new int[numInts];
@@ -88,5 +106,14 @@ private void fillArray(int numInts, int largestInt)
   for (int index = 0; index < myArray.length; index++)
   {
     myArray[index] = (int)(Math.random()*largestInt + 1);
+  }
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "SortStep" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
   }
 }
